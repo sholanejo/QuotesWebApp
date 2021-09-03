@@ -1,7 +1,4 @@
 ﻿@model RandomQuotesPage.Models.QuotesModel
-@{
-    Layout = null;    
-}
 
 
 <!DOCTYPE html>
@@ -17,20 +14,17 @@
             </h1>
         </div>
         <div>
+            <div asp-validation-summary="All" class="text-center"></div>
             <form asp-action="QuotesInput" method="post">
-                <div>
-                    <label asp-for="QuotePoster">Name:</label>
-                    <input asp-for="QuotePoster"/>
-                </div>
-                <div>
+                <div class="form-group">
                     <label asp-for="QuoteAuthor">Quote Author:</label>
-                    <input asp-for="QuoteAuthor" />
+                    <input asp-for="QuoteAuthor" class="form-control"/>
                 </div>
-                <div>
+                <div class="form-group">
                     <label asp-for="Quote">Quote:</label>
-                    <input asp-for="Quote"/>
+                    <input asp-for="Quote" class="form-control"/>
                 </div>
-                <button type="submit">SUBMIT INPUT</button>
+                <button type="submit" class="btn btn-primary">SUBMIT INPUT</button>
             </form>
         </div>
         

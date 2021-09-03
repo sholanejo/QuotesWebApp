@@ -1,18 +1,29 @@
-﻿@{
-    Layout = null;
-}
+﻿@model RandomQuotesPage.Models.QuotesModel
 
+@{ 
+    ViewData["Title"] = "Home Page";
+    Random rnd = new Random();
+    var num = rnd.Next(0, Repository.GetAll.Count());
+    var quotes = RandomQuotesPage.Models.Repository.GetQuotes();
+}
 <!DOCTYPE html>
     <html>
     <head>
         <meta name="viewport" content="width=device-width"/>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css">
         <title>QUOTES!</title>
     </head>
     <body>
-        <div>
+        <div class="text-center">
             <h1>
-                SOME RANDOM FIRE QUOTES COMING SOON
+                SOME RANDOM FIRE QUOTES
             </h1>
+            <p>
+                Quote Author: @quotes[num].QuoteAuthor
+            </p>
+            <p>
+                Quote: @quotes[num].Quote
+            </p>
             <div>
                 <a asp-action="QuotesInput">CLICK TO INPUT QUOTE</a>
             </div>

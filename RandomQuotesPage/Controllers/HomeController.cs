@@ -23,13 +23,21 @@ namespace RandomQuotesPage.Controllers
         [HttpPost]
         public ViewResult QuotesInput(QuotesModel quotes)
         {
-            Repository.AddQuote(quotes);
-            return View("Thanks", quotes);
+            if (ModelState.IsValid)
+            {
+                Repository.AddQuote(quotes);
+                return View("Thanks", quotes);
+            }
+            else
+            {
+                return View();
+            }
+            
         }
 
         public ViewResult QuoteList()
         {
-            return View(Repository.Quotes);
+            return View(Repository.GetAll);
         }
     }
 }

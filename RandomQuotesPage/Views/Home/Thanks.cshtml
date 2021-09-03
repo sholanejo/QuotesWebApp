@@ -1,7 +1,4 @@
 ﻿@model RandomQuotesPage.Models.QuotesModel
-@{ 
-    Layout = null;
-}
 
 <!DOCTYPE html>
     <html>
@@ -9,12 +6,15 @@
         <meta name="viewport"content="width=device-width"/>
         <title>THANKS</title>
     </head>
-    <body>
+    <body class="text-center">
         <div>
             <h1>
-                THANK YOU, @Model.QuotePoster!
+                THANK YOU!
             </h1>
-            Click <a asp-action="QuoteList">here</a> to see more quotes, including yours.
+            <div>
+                Click <a asp-action="Index">here</a> to return back to the home page.
+            </div>
+            
         </div>
     </body>
     </html>
