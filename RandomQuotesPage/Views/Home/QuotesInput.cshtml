@@ -1,0 +1,39 @@
+﻿@model RandomQuotesPage.Models.QuotesModel
+@{
+    Layout = null;    
+}
+
+
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta name=" viewport" content="width=device-width" />
+        <title>Quote Input Form</title>
+    </head>
+    <body>
+        <div>
+            <h1>
+                Please Fill the Form Below to Input Your Quote.
+            </h1>
+        </div>
+        <div>
+            <form asp-action="QuotesInput" method="post">
+                <div>
+                    <label asp-for="QuotePoster">Name:</label>
+                    <input asp-for="QuotePoster"/>
+                </div>
+                <div>
+                    <label asp-for="QuoteAuthor">Quote Author:</label>
+                    <input asp-for="QuoteAuthor" />
+                </div>
+                <div>
+                    <label asp-for="Quote">Quote:</label>
+                    <input asp-for="Quote"/>
+                </div>
+                <button type="submit">SUBMIT INPUT</button>
+            </form>
+        </div>
+        
+
+    </body>
+    </html>
